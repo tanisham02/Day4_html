@@ -1,0 +1,27 @@
+1. Geolocation API
+
+<button onclick="getLocation()">Get My Location</button>       //<!-- Button that calls getLocation() when clicked -->
+<p id="output"></p>                                           //<!-- Paragraph to show the location result -->
+
+<script>
+function getLocation() {                                // Function to get the user's location
+  if (navigator.geolocation) {                          // Check if the browser supports geolocation
+navigator.geolocation.getCurrentPosition(function(position)               // Try to get the current position (calls success or error function
+{
+                                                                         // If successful, display latitude and longitude
+      document.getElementById("output").textContent = "Latitude: " + position.coords.latitude +      
+        ", Longitude: " + position.coords.longitude;                            
+}, 
+function(error)
+{
+                                                                        // If there’s an error (e.g., permission denied), show error message
+      document.getElementById("output").textContent =
+        "Error getting location.";
+    });
+ }
+else {
+                                                                       // If geolocation is not supported in the browser
+    document.getElementById("output").textContent = "Geolocation not supported.";
+  }
+}
+</script>
