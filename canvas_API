@@ -1,0 +1,27 @@
+|     Command      |         Syntax Example                 |
+| ---------------- | -------------------------------------- |
+| Fill rectangle   |  ctx.fillRect(x, y, width, height);`   |
+| Stroke rectangle |  ctx.strokeRect(x, y, width, height);` |
+| Clear area       |  ctx.clearRect(x, y, width, height);`  |
+| Set color        |  ctx.fillStyle = "red";`               |
+| Draw text        |  ctx.fillText("Hello", x, y);`         |
+| Set font         |  ctx.font = "16px Arial";`             |
+
+
+
+<canvas id="myCanvas" width="300" height="200" style="border:1px solid black;"></canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");  // Get the canvas
+const ctx = canvas.getContext("2d");                 // Get 2D context
+
+ctx.fillStyle = "blue";                              // Set fill color to blue
+ctx.fillRect(50, 50, 100, 100);                      // Draw filled square
+
+ctx.strokeStyle = "red";                             // Set border color to red
+ctx.strokeRect(50, 50, 100, 100);                    // Draw red border around it
+
+ctx.font = "20px Arial";                             // Set font
+ctx.fillStyle = "black";                             // Set text color
+ctx.fillText("Canvas!", 60, 45);                     // Draw text on canvas
+</script>
