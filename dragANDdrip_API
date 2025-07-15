@@ -1,0 +1,35 @@
+                                           //First box with a draggable image
+<div id="box1" 
+     ondrop="drop(event)"                 // Run drop() when item is dropped here
+     ondragover="allowDrop(event)"        // Allow dropping by preventing default
+     style="width:150px;height:150px;border:1px solid black;">
+  
+  <img id="drag1" 
+       src="image.png"                   // Image file to drag (replace with your image)
+       draggable="true"                  // Makes the image draggable
+       ondragstart="drag(event)"         // Triggers when dragging starts
+       width="100">                      // Sets image width
+</div>
+
+                                         //Second box (empty) to drop the image into
+<div id="box2" 
+     ondrop="drop(event)"                // Run drop() here too
+     ondragover="allowDrop(event)"       // Needed to allow drag-over
+     style="width:150px;height:150px;border:1px solid black;">
+</div>
+                                           //JavaScript code
+<script>
+function allowDrop(event) {
+  event.preventDefault();                // Prevent default to allow dropping
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);  // Store dragged element's ID
+}
+
+function drop(event) {
+  event.preventDefault();               // Prevent default behavior
+  const data = event.dataTransfer.getData("text");       // Get dragged element's ID
+  event.target.appendChild(document.getElementById(data)); // Move dragged item here
+}
+</script>
