@@ -1,0 +1,16 @@
+<h2>Audio Example</h2>
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">    <!-- Replace with your audio file -->
+  Your browser does not support the audio tag.
+</audio>
+
+<h2>Video Example</h2>
+<video controls width="300">
+  <source src="video.mp4" type="video/mp4">     <!-- Replace with your video file -->
+  Your browser does not support the video tag.
+</video>
+
+
+JS
+document.getElementById("myAudio").play();    // Play audio
+document.getElementById("myVideo").pause();   // Pause video
