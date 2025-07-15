@@ -1,0 +1,44 @@
+1. localStorage: keeps the data even after closing and reopening the browser
+
+<input id="nameInput" placeholder="Enter your name">
+<button onclick="saveName()">Save</button>
+<p id="message"></p>
+
+<script>
+function saveName() {
+  const name = document.getElementById("nameInput").value; // Get input
+  localStorage.setItem("username", name);                  // Save to storage
+  document.getElementById("message").textContent = "Saved!";
+}
+
+// Show stored name when the page loads
+window.onload = function() {
+  const storedName = localStorage.getItem("username");     // Get stored value
+  if (storedName) {
+    document.getElementById("message").textContent = "Welcome back, " + storedName;
+  }
+};
+</script>
+
+2. sessionStorage: clears automatically when:close the browser tab or refresh the tab (data remains).
+
+<!-- Input field and button to save data -->
+<input id="nameInput" placeholder="Enter your name">
+<button onclick="saveName()">Save</button>
+<p id="message"></p>
+
+<script>
+function saveName() {
+  const name = document.getElementById("nameInput").value;     // Get value from input
+  sessionStorage.setItem("username", name);                    // Save it in sessionStorage
+  document.getElementById("message").textContent = "Saved!";   // Show confirmation
+}
+
+window.onload = function() {
+  const storedName = sessionStorage.getItem("username");       // Get data from sessionStorage
+  if (storedName) {
+    document.getElementById("message").textContent =           // If found, greet user
+      "Welcome back (this session), " + storedName;
+  }
+};
+</script>
