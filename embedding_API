@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Embed Elements Example</title>
+</head>
+<body>
+
+  <!-- 1. <iframe>: Embed a webpage (e.g., YouTube video) -->
+  <h2>Using &lt;iframe&gt; to Embed a YouTube Video</h2>
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+    title="YouTube video" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+
+  <!-- 2. <embed>: Embed a PDF file -->
+  <h2>Using &lt;embed&gt; to Show a PDF</h2>
+  <embed 
+    src="example.pdf" 
+    type="application/pdf" 
+    width="500" 
+    height="600">
+  <!-- Note: If file not found, nothing shows -->
+
+  <!-- 3. <object>: Embed a PDF with fallback content -->
+  <h2>Using &lt;object&gt; to Show a PDF with Fallback</h2>
+  <object 
+    data="example.pdf" 
+    type="application/pdf" 
+    width="500" 
+    height="600">
+    <p>PDF cannot be displayed. <a href="example.pdf">Download PDF</a></p>
+  </object>
+
+</body>
+</html>
