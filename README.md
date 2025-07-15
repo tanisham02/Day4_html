@@ -1,1 +1,6 @@
-# Day4_html
+## TOPICS:
+Geolocation API
+Drag and Drop
+Web Storage (localStorage, sessionStorage)
+Canvas API (for drawings)
+Audio/Video APIs
